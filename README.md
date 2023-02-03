@@ -12,23 +12,24 @@ Creation of a menu with Angular, using bootstrap and implementing api rest to im
 
 First View:
 
-<img src="https://ibb.co/gT3F9V5" alt="primera-vista">
+
+<img src="https://i.ibb.co/Z8V1Xmn/Captura-de-pantalla-2023-02-03-131613.jpg" alt="Captura-de-pantalla-2023-02-03-131613" border="0">
 
 
 Shopping car with filter:
 
-<img src="https://ibb.co/k4P8yMC" alt="shopping-car">
 
 <img src="https://i.ibb.co/Ht9z2X8/Captura-de-pantalla-2023-02-03-131838.jpg" alt="Captura-de-pantalla-2023-02-03-131838" border="0">
 
 
 Adding data to a list of registration:
 
-<img src="https://ibb.co/0Zg59rT" alt="register">
 
 <img src="https://i.ibb.co/pZtqKdc/Captura-de-pantalla-2023-02-03-132132.jpg" alt="Captura-de-pantalla-2023-02-03-132132" border="0">
 
 
+Use of template driven:
 
 
+<img src="https://i.ibb.co/5nvdj9K/Captura-de-pantalla-2023-02-03-133239.jpg" alt="Captura-de-pantalla-2023-02-03-133239" border="0">
 
