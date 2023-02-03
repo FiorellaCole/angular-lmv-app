@@ -1,0 +1,73 @@
+<div>
+
+    <div class="border border-2 border-primary m-2 p-2">
+        <p class="lead text-primary display-5">Pipe personalizada para verificar Nro de vistas</p>
+        <p class="lead display-6">Nro de vistas: {{vistasPrincipiante}}</p>
+        <p class="lead display-6">Resultado: {{vistasPrincipiante | vistas}}</p>
+    </div>
+    <hr/>
+    <div class="border border-2 border-primary m-2 p-2">
+        <p class="lead text-primary display-5">Pipe personalizada para verificar Nro de vistas</p>
+        <p class="lead display-6">Nro de vistas: {{vistasPrimedio}}</p>
+        <p class="lead display-6">Resultado: {{vistasPrimedio | vistas}}</p>
+    </div>
+    <hr/>
+    <div class="border border-2 border-primary m-2 p-2">
+        <p class="lead text-primary display-5">Pipe personalizada para verificar Nro de vistas</p>
+        <p class="lead display-6">Nro de vistas: {{vistasConAudiencia}}</p>
+        <p class="lead display-6">Resultado: {{vistasConAudiencia | vistas}}</p>
+    </div>
+    <hr/>
+    <div class="border border-2 border-primary m-2 p-2">
+        <p class="lead text-primary display-5">Pipe personalizada para verificar Nro de vistas</p>
+        <p class="lead display-6">Nro de vistas: {{vistasNoValidas}}</p>
+        <p class="lead display-6">Resultado: {{vistasNoValidas | vistas}}</p>
+    </div>
+    <hr/>
+
+    <div class="alert alert-primary">
+        <p class="lead fs-2">Párrafo sin pipe (uppercase): {{parrafo}}</p>
+        <p class="lead fs-2">Párrafo con pipe (uppercase): {{parrafo | uppercase}}</p>
+    </div>
+    <hr/>
+    <div class="alert alert-primary mt-3">
+        <p class="lead fs-2">Titulo de libro sin pipe (lowercase): {{tituloLibro}}</p>
+        <p class="lead fs-2">PTitulo de libro con pipe (uppercase): {{tituloLibro | lowercase}}</p>
+    </div>
+    <hr/>
+    <div class="alert alert-primary mt-3">
+        <p class="lead fs-2">Precio sin pipe: {{precio}}</p>
+        <p class="lead fs-2">Precio sin pipe: (default) {{precio | number}}</p>
+        <p class="lead fs-2">Precio sin pipe: (default considera 2 decimales) {{precio | number:'1.0-2'}}</p>
+        <p class="lead fs-2">Precio sin pipe: (default considera 4 decimales) {{precio | number:'1.0-4'}}</p>
+    </div>
+    <hr/>
+    <div class="alert alert-primary mt-3">
+        <p class="lead fs-2">IGV sin pipe: {{IGV}}</p>
+        <p class="lead fs-2">TCEA sin pipe: {{TCEA}}</p>
+        <p class="lead fs-2">IGV con pipe (percent) : {{IGV | percent}}</p>   
+        <p class="lead fs-2">TCEA con pipe (percent) : {{TCEA | percent}}</p> 
+    </div>
+
+    <hr/>
+    <div class="alert alert-primary mt-3">
+        <p class="lead fs-2">Ahorro sin pipe: {{ahorro}}</p>
+        <p class="lead fs-2">Ahorro con pipe ( currency default dólar): {{ahorro | currency}}</p>
+        <p class="lead fs-2">Ahorro con pipe ( currency euro): {{ahorro | currency: 'EUR'}}</p>
+        <p class="lead fs-2">Ahorro con pipe ( currency default YEN): {{ahorro | currency: 'JPY'}}</p>
+        <p class="lead fs-2">Ahorro con pipe ( currency default Sol): {{ahorro | currency: 'PEN'}}</p>
+        <p class="lead fs-2">Ahorro con pipe ( currency chile peso): {{ahorro | currency: 'CLP':'symbol-narrow'}}</p>
+        <p class="lead fs-2">Ahorro con pipe ( currency colombia peso): {{ahorro | currency: 'COP': 'symbol-narrow'}}</p>
+    </div>
+
+    <hr/>
+    <div class="alert alert-primary mt-3">
+        <p class="lead fs-2">Fecha sin pipe: {{fecha}}</p>  
+        <p class="lead fs-2">Fecha con pipe: {{fecha | date}}</p> 
+        <p class="lead fs-2">Fecha con pipe (dd/mm/yyy) : {{fecha | date:'dd/MM/yyyy'}}</p> 
+        <p class="lead fs-2">Fecha con pipe (hora): {{fecha | date:'shortTime'}}</p>
+        <p class="lead fs-2">Fecha con pipe (dia y hora): {{fecha | date:'dd/MM/yyyy'}} {{fecha | date}}</p> 
+        <p class="lead fs-2">Fecha con pipe (día y hora abreviado): {{fecha | date: 'dd/MM/yyyy HH:mm:ss'}} </p> 
+    </div>
+
+</div>

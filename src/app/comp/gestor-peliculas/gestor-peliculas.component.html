@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-4 border border-success shadow border-3 me-2 mt-2">
+            <p class="lead text-dark fs-3">Ingreso de nuevas Películas</p>
+
+            <form [formGroup]="formPeliculas">
+                <label class="label lead text-dark">Nombre:</label>
+                <input type="text" formControlName="nombre" class="form-control"/>
+                <label class="label lead text-dark">Año de estreno:</label>
+                <input type="text" formControlName="estreno" class="form-control"/>
+                <label class="label lead text-dark">Género:</label>
+                <input type="text" formControlName="genero" class="form-control"/>
+                <label class="label lead text-dark">Duración:</label>
+                <input type="text" formControlName="duracion" class="form-control"/>
+                <label class="label lead text-dark">Calificación</label>
+                <input type="text" formControlName="calificacion" class="form-control"/>
+                <button class="btn btn-sm btn-success mt-2 mb-2" (click)="registrar()">Registrar</button>
+            </form>
+        </div>    
+        <div class="col col-7 border border-success shadow border-3 mt-2">
+            <p class="lead text-dark fs-3">Películas totales: {{peliculas.length}}</p>
+            <p class="lead text-dark">Lista de películas</p>
+            <table class="table table-hover text-dark">
+                <thead>
+                    <tr>
+
+                        <th>Año</th>
+                        <th>Estreno</th>
+                        <th>Género</th>
+                        <th>Duración</th>
+                        <th>Calificación</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mov of peliculas">
+                        <td>{{mov.nombre}}</td>
+                        <td>{{mov.estreno}}</td>
+                        <td>{{mov.genero}}</td>
+                        <td>{{mov.duracion}}</td>
+                        <td>{{mov.calificacion}}</td>
+
+                        <td>
+                            <button class="btn btn-sm btn-danger me-2" (click)="eliminar(mov)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+
+    </div>
+
+</div>

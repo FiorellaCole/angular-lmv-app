@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-4 border border-3 shadow border-success me-2 mt-2">
+            <p class="lead fs-2">Registro de clientes</p>
+            <form #clienteRegistro="ngForm" (ngSubmit)="enviaCliente(clienteRegistro.value); clienteRegistro.reset()">
+
+                <div class="form-group">
+                    <label class="label lead text-success">Nombre:</label>
+                    <input type="text" class="form-control" required minlength="3" maxlength="14" name="nombre"
+                        #nombreRef="ngModel" ngModel />
+                    <div *ngIf="nombreRef.errors && (nombreRef.dirty || nombreRef.touched)"
+                        class="alert alert-success mt-2">
+                        <div [hidden]="!nombreRef.errors?.['required']">
+                            Ingresa el nombre para continuar con el registro
+                        </div>
+                        <div [hidden]="!nombreRef.errors?.['minlength']">
+                            Como mínimo el nombre debe tener 3 caracteres.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label lead text-success">Apellido Materno:</label>
+                    <input type="text" class="form-control" required maxlength="15" name="apellidoMaterno"
+                        #aMaternoRef="ngModel" ngModel />
+                    <div *ngIf="aMaternoRef.errors && (aMaternoRef.dirty || aMaternoRef.touched)"
+                        class="alert alert-success mt-2">
+                        <div [hidden]="!aMaternoRef.errors?.['required']">
+                            Ingresa el apellido materno para continuar con el registro
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label lead text-success">Apellido Paterno:</label>
+                    <input type="text" class="form-control" required maxlength="15" name="apellidoPaterno"
+                        #aPaternoRef="ngModel" ngModel />
+                    <div *ngIf="aPaternoRef.errors && (aPaternoRef.dirty || aPaternoRef.touched)"
+                        class="alert alert-success mt-2">
+                        <div [hidden]="!aPaternoRef.errors?.['required']">
+                            Ingresa el apellido paterno para continuar con el registro
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label lead text-success">DNI:</label>
+                    <input type="text" name="dni" class="form-control" required maxlength="9" #dniRef="ngModel" ngModel
+                        required (keypress)="validacion($event)" />
+
+                    <div *ngIf="dniRef.errors && (dniRef.dirty || dniRef.touched)" class="alert alert-success mt-2">
+                        <div [hidden]="!dniRef.errors?.['required']">
+                            Ingresa el DNI continuar con el registro
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label lead text-success">Ingrese su contraseña (solo números):</label>
+                    <input type="text" name="clave" class="form-control" required maxlength="9" #claveRef="ngModel"
+                        ngModel required (keypress)="validacion($event)" />
+
+                    <div *ngIf="claveRef.errors && (claveRef.dirty || claveRef.touched)"
+                        class="alert alert-success mt-2">
+                        <div [hidden]="!claveRef.errors?.['required']">
+                            Ingrese su contraseña numérica para continuar con el registro
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-danger mt-3 mb-3" [disabled]="!clienteRegistro.form.valid">Registrar</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col col-7 border border-3 shadow border-success mt-2">
+            <hr />
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>DNI</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientes">
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.apellidoPaterno}}</td>
+                        <td>{{cliente.apellidoMaterno}}</td>
+                        <td>{{cliente.dni}}</td>
+                        <td>{{cliente.clave}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

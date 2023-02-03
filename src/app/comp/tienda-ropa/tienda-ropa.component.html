@@ -1,0 +1,42 @@
+<div class="container">
+    <p class="lead fs-2 text-center"> Buscador de productos</p>
+    <div class="row">
+        <div class="col col-5 border border-2 shadow m-2 p-2">
+            <p class="lead text-primary"> Filtrar por marca o precio:</p>
+            <input type="text" [(ngModel)]="consulta" />
+        </div>
+        <div class="col col-6 border border-2 shadow-p2 m-2 p-2">
+            <p class="lead text-primary">Resultado:</p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Color</th>
+                        <th>Stock</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zapa of zapatillas | nombrePipe : consulta">
+                        <td>{{zapa.marca}}</td>
+                        <td>{{zapa.precio}}</td>
+                        <td>{{zapa.color}}</td>
+                        <td>{{zapa.stock}}</td>
+                        <td>  <img src={{zapa.imagen}} class="img-fluid"></td>
+                    
+                    </tr>
+                    <tr *ngFor="let ro of ropa | nombrePipe : consulta">
+                        <td>{{ro.marca}}</td>
+                        <td>{{ro.precio}}</td>
+                        <td>{{ro.color}}</td>
+                        <td>{{ro.stock}}</td>
+                        <td>  <img src={{ro.imagen}} class="img-fluid"></td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
